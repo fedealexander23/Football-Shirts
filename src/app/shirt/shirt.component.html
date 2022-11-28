@@ -1,0 +1,16 @@
+<h1>Camisetas</h1>
+
+<div class="container-shirt">
+    <div class="shirt-list" *ngFor="let shirt of shirts" [ngClass]="{'clearance': shirt.clearance}">
+        <div>
+            {{shirt.image}}
+            
+        </div>
+        <div>
+            {{shirt.club}} - {{shirt.price}} - {{shirt.stock}}
+        </div>
+        <div class="btn-agregar">
+            <button class="btn btn-primary">Agregar al carrito</button>
+        </div>
+    </div>
+</div>
