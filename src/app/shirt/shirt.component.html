@@ -1,13 +1,15 @@
-<h1>CAMISETAS</h1>
-
-<div class="container-shirt">
-    <div class="shirt-list" *ngFor="let shirt of shirts" [ngClass]="{'clearance': shirt.clearance}">
-        <img class="img-shirt" src="{{shirt.image}}" alt="camiseta">
-        <div class="data-shirt">
-            {{shirt.club}} - {{shirt.price | currency}} - {{shirt.stock}} en stock
-        </div>
-        <div class="btn-agregar">
-            <button class="btn btn-primary">Agregar al carrito</button>
+<section>
+    <div class="container-shirt">
+        <div class="shirt-list" *ngFor="let shirt of shirts">
+            <img class="img-shirt" src="{{shirt.image}}" alt="camiseta">
+            <div class="data-shirt">
+                {{shirt.club}} - {{shirt.price | currency}} -&#160;
+                <span class="badge text-bg-danger" *ngIf="shirt.stock==0">SIN STOCK</span>
+                <span *ngIf="shirt.stock>0">{{shirt.stock}}</span>
+            </div>
+            <div [ngClass]="{'clearance': shirt.stock==0}" class="btn-agregar">
+                <button class="btn btn-primary">Agregar al carrito</button>
+            </div>
         </div>
     </div>
-</div>
+</section>

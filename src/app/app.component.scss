@@ -1,4 +1,22 @@
-
+*{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+.top-forehead{
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+    margin-bottom: 30px ;
+}
+.img-forehead{
+    width: 200px;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace  ;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-left: 50px;
+}
 .logo{
     width: 50px;
     margin-right: 10px;

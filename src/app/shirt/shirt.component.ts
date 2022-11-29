@@ -14,7 +14,6 @@ export class ShirtComponent {
       club: 'Rauch',
       price: 200,
       stock: 2,
-      clearance: true,
       quantity: 0,
     },
     {
@@ -22,7 +21,6 @@ export class ShirtComponent {
       club: 'Porter',
       price: 220,
       stock: 5,
-      clearance: true,
       quantity: 0,
     },
     {
@@ -30,7 +28,6 @@ export class ShirtComponent {
       club: 'Rauch',
       price: 200,
       stock: 2,
-      clearance: true,
       quantity: 0,
     },
     {
@@ -38,7 +35,34 @@ export class ShirtComponent {
       club: 'Porter',
       price: 220,
       stock: 0,
-      clearance: false,
+      quantity: 0,  
+    },
+    {
+      image: 'assets/img/croacia-titu-2021.jpg',
+      club: 'Rauch',
+      price: 200,
+      stock: 2,
+      quantity: 0,
+    },
+    {
+      image: 'assets/img/italia-sup-2022.jpg',
+      club: 'Porter',
+      price: 220,
+      stock: 0,
+      quantity: 0,  
+    },
+    {
+      image: 'assets/img/croacia-titu-2021.jpg',
+      club: 'Rauch',
+      price: 200,
+      stock: 2,
+      quantity: 0,
+    },
+    {
+      image: 'assets/img/italia-sup-2022.jpg',
+      club: 'Porter',
+      price: 220,
+      stock: 0,
       quantity: 0,  
     }
   ]
