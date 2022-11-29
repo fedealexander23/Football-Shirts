@@ -1,14 +1,14 @@
 <section>
     <div class="container-shirt">
         <div class="shirt-list" *ngFor="let shirt of shirts">
-            <img class="img-shirt" src="{{shirt.image}}" alt="camiseta">
+            <img class="img-shirt" [src]="shirt.image" [alt]="shirt.image">
             <div class="data-shirt">
                 {{shirt.club}} - {{shirt.price | currency}} -&#160;
-                <span class="badge text-bg-danger" *ngIf="shirt.stock==0">SIN STOCK</span>
-                <span *ngIf="shirt.stock>0">{{shirt.stock}}</span>
+                <span class="badge text-bg-danger" *ngIf="shirt.stock==0">SIN STOCK</span> 
             </div>
-            <div [ngClass]="{'clearance': shirt.stock==0}" class="btn-agregar">
-                <button class="btn btn-primary">Agregar al carrito</button>
+            
+            <div [ngClass]="{'sold-out': shirt.stock==0}" class="btn-agregar">
+                <button class="btn btn-primary" (click)="addToCart(shirt)">Agregar al carrito</button>
             </div>
         </div>
     </div>

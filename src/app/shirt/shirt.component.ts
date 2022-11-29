@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../cart.service';
 import { Shirt } from './Shirt';
 
 @Component({
@@ -11,60 +12,46 @@ export class ShirtComponent {
   shirts: Shirt[] = [
     {
       image: 'assets/img/argentina-titu-2021.jpg',
-      club: 'Rauch',
+      club: 'argentina',
       price: 200,
-      stock: 2,
+      stock: 8,
       quantity: 0,
     },
     {
       image: 'assets/img/dinamarca-titu-2021.jpg',
-      club: 'Porter',
+      club: 'dinamarca',
       price: 220,
       stock: 5,
       quantity: 0,
     },
     {
       image: 'assets/img/croacia-titu-2021.jpg',
-      club: 'Rauch',
+      club: 'croacia',
       price: 200,
-      stock: 2,
+      stock: 3,
       quantity: 0,
     },
     {
       image: 'assets/img/italia-sup-2022.jpg',
-      club: 'Porter',
+      club: 'italia',
       price: 220,
       stock: 0,
       quantity: 0,  
     },
-    {
-      image: 'assets/img/croacia-titu-2021.jpg',
-      club: 'Rauch',
-      price: 200,
-      stock: 2,
-      quantity: 0,
-    },
-    {
-      image: 'assets/img/italia-sup-2022.jpg',
-      club: 'Porter',
-      price: 220,
-      stock: 0,
-      quantity: 0,  
-    },
-    {
-      image: 'assets/img/croacia-titu-2021.jpg',
-      club: 'Rauch',
-      price: 200,
-      stock: 2,
-      quantity: 0,
-    },
-    {
-      image: 'assets/img/italia-sup-2022.jpg',
-      club: 'Porter',
-      price: 220,
-      stock: 0,
-      quantity: 0,  
-    }
   ]
+
+  constructor(private cart: CartService) { }
+
+  ngOnInit(): void {
+  }
+
+  addToCart(shirt: Shirt): void{
+    shirt.quantity = 1;
+    this.cart.addToCart(shirt);
+    shirt.stock -= shirt.quantity;
+    shirt.quantity = 0;
+  }
+
+  
 
 }

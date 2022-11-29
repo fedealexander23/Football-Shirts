@@ -1,1 +1,12 @@
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At iste rerum, expedita minima sunt asperiores nemo, ipsam eaque enim, voluptatem consequatur quibusdam. Eius reprehenderit sunt itaque a atque? Eius numquam illo dolorem non alias nemo omnis, sequi possimus itaque obcaecati culpa modi natus aut quam, autem necessitatibus temporibus laboriosam mollitia. Iusto, sunt saepe facere delectus voluptate suscipit excepturi nesciunt praesentium unde. Alias quidem soluta mollitia delectus maiores. Laborum assumenda, sapiente, iure adipisci, pariatur beatae exercitationem reprehenderit incidunt quam id ab.</p>
+<div class="front">
+    <img class="img-cart" src="assets/img/cart.png" alt="">
+    <h1>CARRITO</h1>
+</div>
+<table class="table">
+    <tbody>
+        <tr *ngFor="let shirt of (cartList$ | async)">
+            <td class="tr">{{shirt.club}} - {{shirt.quantity}}</td>
+            <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+        </tr>
+    </tbody>
+</table>
