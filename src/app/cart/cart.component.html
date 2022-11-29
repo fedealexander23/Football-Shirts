@@ -15,7 +15,7 @@
                 <td>
                     <app-input-integer [(quantity)]="shirt.quantity" [max]="shirt.stock" (maxReached)="maxReached($event)" *ngIf="shirt.stock"></app-input-integer>
                 </td>
-                <td><button type="button" class="btn btn-danger" (click)="deleteToCart(shirt)">Eliminar</button></td>
+                <!--<td><button type="button" class="btn btn-danger" (click)="deleteToCart(shirt)">Eliminar</button></td>-->
             </span>
         </tr>
     </tbody>
