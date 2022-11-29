@@ -16,7 +16,7 @@ h1{
     padding-bottom: 8px;
     border-bottom: solid black;
 }
-.front-first{
+.front-first, .buy-shirt{
     display: flex;
     justify-content: center;
 }
@@ -43,6 +43,19 @@ span{
 .btn-buy{
     display: flex;
     align-items: center;
+}
+td img {
+    width: 50px;
+    border: solid black 1px;
+    margin-right: 100px;
+}
+.shirt-cart{
+    display: flex;
+    justify-content: flex-start;    
+}
+.input-integer{
+    margin-left: 30px;
+
 }
 
 

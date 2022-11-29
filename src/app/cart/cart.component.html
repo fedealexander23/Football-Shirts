@@ -11,10 +11,13 @@
     <tbody>
         <tr *ngFor="let shirt of (cartList$ | async)" >
             <span *ngIf="shirt.quantity>0">
-                <td class="col-3">{{shirt.club}} </td>
-                <td>
-                    <app-input-integer [(quantity)]="shirt.quantity" [max]="shirt.stock" (maxReached)="maxReached($event)" *ngIf="shirt.stock"></app-input-integer>
-                </td>
+                <div class="shirt-cart"> 
+                    <td class="col-3"><img [src]="shirt.image" [alt]="shirt.image"></td>
+                    <td class="col-3">{{shirt.club}} </td>
+                    <td class="input-integer">
+                        <app-input-integer [(quantity)]="shirt.quantity" [max]="shirt.stock" (maxReached)="maxReached($event)" *ngIf="shirt.stock"></app-input-integer>
+                    </td>
+                </div>
                 <td><button type="button" class="btn btn-danger" (click)="deleteToCart(shirt)">Eliminar</button></td>
             </span>
         </tr>
