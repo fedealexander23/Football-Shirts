@@ -1,0 +1,21 @@
+h1{
+    font-size: 58px;
+}
+span{
+    font-weight: bolder;
+}
+h3{
+    font-size: 20px;
+    width: 500px;
+}
+h4{
+    font-weight: bold;
+}
+.container, .data{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 50px;
+}
+.data{
+    margin-top: 35px;
+}
