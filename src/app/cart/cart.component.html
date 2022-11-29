@@ -1,12 +1,22 @@
 <div class="front">
-    <img class="img-cart" src="assets/img/cart.png" alt="">
-    <h1>CARRITO</h1>
+    <div class="front-first">
+        <img class="img-cart" src="assets/img/cart.png" alt="">
+        <h1>CARRITO</h1>
+    </div>
+    <div class="btn-comprar">
+        <button (click)="buy()" type="button" class="btn btn-primary">Comprar</button>
+    </div>
 </div>
 <table class="table">
     <tbody>
-        <tr *ngFor="let shirt of (cartList$ | async)">
-            <td class="tr">{{shirt.club}} - {{shirt.quantity}}</td>
-            <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+        <tr *ngFor="let shirt of (cartList$ | async)" >
+            <span *ngIf="shirt.quantity>0">
+                <td class="col-3">{{shirt.club}} </td>
+                <td>
+                    <app-input-integer [(quantity)]="shirt.quantity" [max]="shirt.stock" (maxReached)="maxReached($event)" *ngIf="shirt.stock"></app-input-integer>
+                </td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteToCart(shirt)">Eliminar</button></td>
+            </span>
         </tr>
     </tbody>
 </table>

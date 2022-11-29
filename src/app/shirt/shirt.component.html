@@ -4,9 +4,11 @@
             <img class="img-shirt" [src]="shirt.image" [alt]="shirt.image">
             <div class="data-shirt">
                 {{shirt.club}} - {{shirt.price | currency}} -&#160;
-                <span class="badge text-bg-danger" *ngIf="shirt.stock==0">SIN STOCK</span> 
+                <div>
+                    <span class="badge text-bg-danger" *ngIf="shirt.stock==0">SIN STOCK</span> 
+                    <app-input-integer [(quantity)]="shirt.quantity" [max]="shirt.stock" (maxReached)="maxReached($event)" *ngIf="shirt.stock"></app-input-integer>
+                </div>
             </div>
-            
             <div [ngClass]="{'sold-out': shirt.stock==0}" class="btn-agregar">
                 <button class="btn btn-primary" (click)="addToCart(shirt)">Agregar al carrito</button>
             </div>

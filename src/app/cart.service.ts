@@ -9,12 +9,14 @@ import { Shirt } from './shirt/Shirt';
 
 export class CartService {
   
+  constructor() { }
+  
   private _cartList: Shirt[] = [];
   
-    cartList: BehaviorSubject<Shirt[]> = new BehaviorSubject (this._cartList);
-
+  cartList: BehaviorSubject<Shirt[]> = new BehaviorSubject (this._cartList);
+  
   addToCart(shirt: Shirt) {
-
+    
     let item = this._cartList.find((v1) => v1.club == shirt.club);
     if(!item){
       this._cartList.push({... shirt});
@@ -25,5 +27,14 @@ export class CartService {
     this.cartList.next(this._cartList);
   }
 
-  constructor() { }
+  deleteToCart(shirt: Shirt) {
+    
+    let item = this._cartList.find((v1) => v1.club == shirt.club);
+    if(!item){
+      this._cartList.pop();
+    } 
+    this.cartList.next(this._cartList);
+    
+  }
+  
 }

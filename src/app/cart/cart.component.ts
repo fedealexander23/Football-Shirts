@@ -18,4 +18,19 @@ export class CartComponent {
   ngOnInit(): void {
   }
 
+  deleteToCart(shirt: Shirt): void{
+    shirt.quantity = 1;
+    this.cart.deleteToCart(shirt);
+    shirt.quantity = 0;
+    console.log(shirt.stock);
+  }
+  
+  buy(){
+      alert('Felicitaciones por su compra, sera entregada muy pronto');
+    }
+
+  maxReached(m: String){
+    alert(m);
+  }
+
 }

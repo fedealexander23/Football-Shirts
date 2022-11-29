@@ -46,12 +46,12 @@ export class ShirtComponent {
   }
 
   addToCart(shirt: Shirt): void{
-    shirt.quantity = 1;
     this.cart.addToCart(shirt);
     shirt.stock -= shirt.quantity;
     shirt.quantity = 0;
   }
 
-  
-
+  maxReached(m: String){
+    alert(m);
+  }
 }
